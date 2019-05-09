@@ -62,9 +62,9 @@ public class FluxAndMonoTransformTest {
     public void transformUsingFlatMap_parallel() {
         Flux<String> stringFlux = Flux.fromIterable(Arrays.asList("A","B","C","D","E","F"))
                 .window(3)
-                //.map(s -> s.map(this::convertToList).subscribeOn(Schedulers.parallel()))
-                //.flatMap(s -> s)
-                .flatMap(s -> s.map(this::convertToList).subscribeOn(Schedulers.parallel()))
+                .map(s -> s.map(this::convertToList).subscribeOn(Schedulers.parallel()))
+                .flatMap(s -> s)
+                //.flatMap(s -> s.map(this::convertToList).subscribeOn(Schedulers.parallel()))
                 //.flatMap(s -> s)
                 //.map(this::convertToList)
                 //.flatMap(s -> Flux.fromIterable(s))
@@ -78,6 +78,19 @@ public class FluxAndMonoTransformTest {
 
     }
 
+    @Test
+    public void transformUsingFlatMap_parallel_ordered() {
+        Flux<String> stringFlux = Flux.fromIterable(Arrays.asList("A","B","C","D","E","F"))
+                .window(3)
+                .flatMapSequential(e -> e.map(this::convertToList).subscribeOn(Schedulers.parallel()))
+                .flatMap(e -> Flux.fromIterable(e))
+                .log();
+
+        StepVerifier.create(stringFlux)
+                .expectNextCount(12)
+                .verifyComplete();
+
+    }
 
     private List<String> convertToList(String s) {
         try {
