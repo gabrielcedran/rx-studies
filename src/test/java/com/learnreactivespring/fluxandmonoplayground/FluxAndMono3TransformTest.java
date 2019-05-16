@@ -8,7 +8,7 @@ import reactor.test.StepVerifier;
 import java.util.Arrays;
 import java.util.List;
 
-public class FluxAndMonoTransformTest {
+public class FluxAndMono3TransformTest {
 
     List<String> names = Arrays.asList("adam", "anna", "jack", "jenny");
 

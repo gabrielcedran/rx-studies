@@ -6,7 +6,7 @@ import reactor.test.StepVerifier;
 
 import java.time.Duration;
 
-public class FluxAndMonoCombineTest {
+public class FluxAndMono5CombineTest {
 
     @Test
     public void combineUsingMerge() {

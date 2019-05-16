@@ -7,7 +7,7 @@ import reactor.test.StepVerifier;
 import java.util.Arrays;
 import java.util.List;
 
-public class FluxAndMonoFilterTest {
+public class FluxAndMono2FilterTest {
 
 
     List<String> names = Arrays.asList("adam", "anna", "jack", "jenny");

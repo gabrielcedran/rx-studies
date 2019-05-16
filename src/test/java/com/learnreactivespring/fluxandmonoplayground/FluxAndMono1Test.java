@@ -5,7 +5,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class FluxAndMonoTest {
+public class FluxAndMono1Test {
     @Test
     public void fluxTest() {
 

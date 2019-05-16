@@ -6,7 +6,7 @@ import reactor.test.StepVerifier;
 
 import java.time.Duration;
 
-public class FluxAndMonoErrorTest {
+public class FluxAndMono6ErrorTest {
 
     @Test
     public void fluxErrorHandling() {

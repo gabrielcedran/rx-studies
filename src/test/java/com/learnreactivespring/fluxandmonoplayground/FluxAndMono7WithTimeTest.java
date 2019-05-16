@@ -6,7 +6,7 @@ import reactor.test.StepVerifier;
 
 import java.time.Duration;
 
-public class FluxAndMonoWithTimeTest {
+public class FluxAndMono7WithTimeTest {
 
     @Test
     public void infiniteSequence() throws InterruptedException {
